@@ -13,10 +13,13 @@ var PostNo = function(){
 		var textByLine = text.split("\n")
 	});
 */
-	var file = "https://saitouseiroku.github.io/test/test.csv";
 
-	var rawFile = new XMLHttpRequest();
+	var param = "Ž­Ž™“‡Œ§‰‚”üŽs";
 	var prefectures = "46";
+	var isExist = false;
+
+	var file = "https://saitouseiroku.github.io/test/test.csv";
+	var rawFile = new XMLHttpRequest();
 
 	rawFile.open("GET", file, false);
 	rawFile.onreadystatechange = function ()
@@ -25,17 +28,27 @@ var PostNo = function(){
 		{
 			if(rawFile.status === 200 || rawFile.status == 0)
 			{
-				var allText = rawFile.responseText.split(/\n/);;
-				//alert(allText[0]); 
+				var line = rawFile.responseText.split(/\n/);;
+				//alert(line[0]); 
 
-				for (var i=0; i<allText.length; i++)
+				for (var i=0; i<line.length; i++)
 				{
-					if( allText[i].slice(0, 2) == prefectures )
+					if( line[i].slice(0, 2) == prefectures )
 					{
-						console.log(allText[i]);
+						//console.log(line[i]);
+						isExist = true;
+
+						var column = line.split(",");
+						console.log(column[2] , column[6] + column[7] + column[8] );
+
+					}else{
+
+						if( isExist )
+						{
+							break;
+						}
 					}
 				}
-
 			}
 		}
 	}
