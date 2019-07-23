@@ -68,8 +68,14 @@ var PostNo = function(param){
 		"沖縄県":{"no":"47"}
 	};
 
-	var pref_nm = param.slice(0, 3);
-	var pref_no = data[pref_nm]["no"];
+	try{
+		var pref_nm = param.slice(0, 3);
+		var pref_no = data[pref_nm]["no"];
+
+	}catch(e)
+	{
+		return;
+	}
 
 	console.log(pref_nm);
 	console.log(pref_no);
