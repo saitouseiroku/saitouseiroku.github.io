@@ -15,7 +15,7 @@ var PostNo = function(){
 */
 
 	var param = "Ž­Ž™“‡Œ§‰‚”üŽs";
-	var prefectures = "46";
+	var pref_no = "46";
 	var isExist = false;
 
 	var file = "https://saitouseiroku.github.io/test/test.csv";
@@ -33,13 +33,17 @@ var PostNo = function(){
 
 				for (var i=0; i<line.length; i++)
 				{
-					if( line[i].slice(0, 2) == prefectures )
+					if( line[i].slice(0, 2) == pref_no )
 					{
 						//console.log(line[i]);
 						isExist = true;
 
 						var column = line[i].split(',');
-						console.log(column[2] , column[6] + column[7] + column[8] );
+
+						if ( param.indexOf(column[7]) != -1 && param.indexOf(column[8]) != -1) {
+							// param‚Écolumn[7]‚ðŠÜ‚Þ & param‚Écolumn[8]‚ðŠÜ‚Þ
+							console.log(column[2] , column[6] + column[7] + column[8] );
+						}
 
 					}else{
 
