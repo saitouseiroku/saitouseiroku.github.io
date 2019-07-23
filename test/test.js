@@ -61,6 +61,8 @@ var PostNo = function(){
 						{
 							if( c7.indexOf(param[j]) != -1 )
 							{
+								console.log(c7);
+								console.log(param[j]);
 								isC7 = true;
 								break;
 							}
@@ -72,6 +74,8 @@ var PostNo = function(){
 							{
 								if( c8.indexOf(param[j]) != -1 )
 								{
+									console.log(c8);
+									console.log(param[j]);
 									isC8 = true;
 									break;
 								}
@@ -80,7 +84,7 @@ var PostNo = function(){
 
 						if( isC7 && isC8 )
 						{
-							console.log(column[2] , column[6] + column[7] + column[8] );
+							//console.log(column[2] , column[6] + column[7] + column[8] );
 						}
 
 					}else{
