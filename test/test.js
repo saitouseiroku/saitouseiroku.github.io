@@ -38,6 +38,7 @@ var PostNo = function(){
 	var rawFile = new XMLHttpRequest();
 
 	rawFile.open("GET", file, false);
+	rawFile.overrideMimeType('text/plain; charset=Shift_JIS');
 	rawFile.onreadystatechange = function ()
 	{
 		if(rawFile.readyState === 4)
