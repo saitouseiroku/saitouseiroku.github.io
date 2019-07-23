@@ -77,7 +77,7 @@ var PostNo = function(param){
 	var isExist = false;
 
 	// この↓ファイルはShift_JIS
-	var file = "https://saitouseiroku.github.io/test/KEN_ALL.CSV";
+	var file = "https://saitouseiroku.github.io/postno/KEN_ALL.CSV";
 
 	var rawFile = new XMLHttpRequest();
 
