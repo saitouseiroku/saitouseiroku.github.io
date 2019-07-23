@@ -58,8 +58,8 @@ var PostNo = function(){
 
 						var c7 = column[7].replace('"', '').replace('"', '');
 						var c8 = column[8].replace('"', '').replace('"', '');
-
-						if( ( var p = c8.indexOf('（') ) != -1 )
+						var p;
+						if( ( p = c8.indexOf('（') ) != -1 )
 						{
 							c8 = c8.slice(0, p);
 						}
