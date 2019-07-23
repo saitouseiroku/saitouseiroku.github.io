@@ -1,13 +1,13 @@
 var PostNo = function(){
 
 	console.log("index");
-
+/*
 	var fs = require("fs");
 	// “¯Šú
 	var text = fs.readFileSync("./test.csv");
 	var textByLine = text.split("\n");
-
 	console.log(textByLine);
+*/
 
 	var rawFile = new XMLHttpRequest();
 	rawFile.open("GET", "./test.csv", false);
