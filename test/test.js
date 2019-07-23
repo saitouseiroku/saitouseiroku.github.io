@@ -89,20 +89,19 @@ var PostNo = function(param){
 		{
 			if(rawFile.status === 200 || rawFile.status == 0)
 			{
-				var line = rawFile.responseText.split(/\n/);;
-				//alert(line[0]); 
+				var line = rawFile.responseText.split(/\n/);
 
 				for( var i=0; i<line.length; i++ )
 				{
 					if( line[i].slice(0, 2) == pref_no )
 					{
-						//console.log(line[i]);
 						isExist = true;
 
 						var column = line[i].split(',');
 
 						var c7 = column[7].replace('"', '').replace('"', '');
 						var c8 = column[8].replace('"', '').replace('"', '');
+
 						var p;
 						if( ( p = c8.indexOf('（') ) != -1 )
 						{
