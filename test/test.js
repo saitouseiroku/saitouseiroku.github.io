@@ -31,7 +31,7 @@ var PostNo = function(){
 				var line = rawFile.responseText.split(/\n/);;
 				//alert(line[0]); 
 
-				for (var i=0; i<line.length; i++)
+				for( var i=0; i<line.length; i++ )
 				{
 					if( line[i].slice(0, 2) == pref_no )
 					{
@@ -46,9 +46,39 @@ var PostNo = function(){
 						c8 = c8.trim();
 
 						//console.log(c7, c8);
-
+						/*
 						if ( ( c7 != "" && param.indexOf(c7) != -1 ) || ( c8 != "" && param.indexOf(c8) != -1 ) ){
 							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
+							console.log(column[2] , column[6] + column[7] + column[8] );
+						}
+						*/
+
+						var isC7 = false;
+						var isC8 = false;
+
+						for( var j=0; j<param.length; j++ )
+						{
+							if( c7.indexOf(param[j]) )
+							{
+								isC7 = true;
+								break;
+							}
+						}
+
+						if( isC7 )
+						{
+							for( var j=0; j<param.length; j++ )
+							{
+								if( c8.indexOf(param[j]) )
+								{
+									isC8 = true;
+									break;
+								}
+							}
+						}
+
+						if( isC7 && isC8 )
+						{
 							console.log(column[2] , column[6] + column[7] + column[8] );
 						}
 
