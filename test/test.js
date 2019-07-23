@@ -35,10 +35,11 @@ var PostNo = function(){
 	var isExist = false;
 
 	var file = "https://saitouseiroku.github.io/test/KEN_ALL.CSV";
+
 	var rawFile = new XMLHttpRequest();
 
+	rawFile.overrideMimeType("text/plain; charset=shift_jis");
 	rawFile.open("GET", file, false);
-	rawFile.overrideMimeType('text/plain; charset=Shift_JIS');
 	rawFile.onreadystatechange = function ()
 	{
 		if(rawFile.readyState === 4)
