@@ -4,7 +4,7 @@ var PostNo = function(){
 /*
 	var fs = require("fs");
 	// 同期
-	var text = fs.readFileSync("./test.csv");
+	var text = fs.readFileSync("./KEN_ALL.CSV");
 	var textByLine = text.split("\n");
 	console.log(textByLine);
 
@@ -34,7 +34,7 @@ var PostNo = function(){
 
 	var isExist = false;
 
-	var file = "https://saitouseiroku.github.io/test/test.csv";
+	var file = "https://saitouseiroku.github.io/test/KEN_ALL.CSV";
 	var rawFile = new XMLHttpRequest();
 
 	rawFile.open("GET", file, false);
@@ -58,6 +58,12 @@ var PostNo = function(){
 
 						var c7 = column[7].replace('"', '').replace('"', '');
 						var c8 = column[8].replace('"', '').replace('"', '');
+
+						if( ( var p = c8.indexOf('（') ) != -1 )
+						{
+							c8 = c8.slice(0, p);
+						}
+
 						c7 = c7.trim();
 						c8 = c8.trim();
 
