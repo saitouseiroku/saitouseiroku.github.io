@@ -7,10 +7,17 @@ var PostNo = function(){
 	var text = fs.readFileSync("./test.csv");
 	var textByLine = text.split("\n");
 	console.log(textByLine);
+
+	// ”ñ“¯Šú
+	fs.readFile("./test.txt", function(text){
+		var textByLine = text.split("\n")
+	});
 */
 	var file = "https://saitouseiroku.github.io/test/test.csv";
+
 	var rawFile = new XMLHttpRequest();
-	var prefectures = "01";
+	var prefectures = "46";
+
 	rawFile.open("GET", file, false);
 	rawFile.onreadystatechange = function ()
 	{
@@ -33,11 +40,4 @@ var PostNo = function(){
 		}
 	}
 	rawFile.send(null);
-
-	// ”ñ“¯Šú
-	/*
-	fs.readFile("./test.txt", function(text){
-		var textByLine = text.split("\n")
-	});
-	*/
 }
