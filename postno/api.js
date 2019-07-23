@@ -186,7 +186,7 @@ var PostNo = function(param){
 
 						if ( param.indexOf(c7+c8) != -1 || param.indexOf(c7+c8_r) != -1 ){
 							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
-							//console.log(column[2] , column[6] + column[7] + column[8] );
+							console.log(column[2] , column[6] + column[7] + column[8] );
 							res += column[2] + "," + c6 + c7 + c8 + ";";
 						}
 
@@ -198,9 +198,9 @@ var PostNo = function(param){
 						}
 					}
 				}
-				return res;
 			}
 		}
 	}
 	rawFile.send(null);
+	return res;
 }
