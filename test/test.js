@@ -15,7 +15,7 @@ var PostNo = function(){
 */
 
 	//var param = "鹿児島県奄美市名瀬";
-	var param = "県奄美市名瀬";
+	var param = "鹿児島県奄美市名瀬幸町25-8";
 	var pref_no = "46";
 	var isExist = false;
 
@@ -46,7 +46,6 @@ var PostNo = function(){
 						c7 = c7.trim();
 						c8 = c8.trim();
 
-						//console.log(c7, c8);
 						/*
 						if ( ( c7 != "" && param.indexOf(c7) != -1 ) || ( c8 != "" && param.indexOf(c8) != -1 ) ){
 							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
@@ -54,6 +53,12 @@ var PostNo = function(){
 						}
 						*/
 
+						if ( param.indexOf(c7+c8) != -1 ){
+							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
+							console.log(column[2] , column[6] + column[7] + column[8] );
+						}
+
+						/*
 						var isC7 = false;
 						var isC8 = false;
 
@@ -86,6 +91,7 @@ var PostNo = function(){
 						{
 							//console.log(column[2] , column[6] + column[7] + column[8] );
 						}
+						*/
 
 					}else{
 
