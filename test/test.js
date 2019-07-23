@@ -18,10 +18,6 @@ var PostNo = function(param){
 		return;
 	}
 
-	//var param = "鹿児島県奄美市名瀬幸町25-8";
-	//var param = "埼玉県比企郡小川町小川1619";
-	//var param = "北海道札幌市中央区北1条西2丁目";
-
 	var data ={
 		"北海道":{"no":"01"},
 		"青森県":{"no":"02"},
@@ -117,6 +113,36 @@ var PostNo = function(param){
 						c8 = c8.trim();
 
 						var c8_r = c8;
+						c8_r = c8_r.replace("五十九", "59");
+						c8_r = c8_r.replace("五十八", "58");
+						c8_r = c8_r.replace("五十七", "57");
+						c8_r = c8_r.replace("五十六", "56");
+						c8_r = c8_r.replace("五十五", "55");
+						c8_r = c8_r.replace("五十四", "54");
+						c8_r = c8_r.replace("五十三", "53");
+						c8_r = c8_r.replace("五十二", "52");
+						c8_r = c8_r.replace("五十一", "51");
+						c8_r = c8_r.replace("五十"  , "50");
+						c8_r = c8_r.replace("四十九", "49");
+						c8_r = c8_r.replace("四十八", "48");
+						c8_r = c8_r.replace("四十七", "47");
+						c8_r = c8_r.replace("四十六", "46");
+						c8_r = c8_r.replace("四十五", "45");
+						c8_r = c8_r.replace("四十四", "44");
+						c8_r = c8_r.replace("四十三", "43");
+						c8_r = c8_r.replace("四十二", "42");
+						c8_r = c8_r.replace("四十一", "41");
+						c8_r = c8_r.replace("四十"  , "40");
+						c8_r = c8_r.replace("三十九", "39");
+						c8_r = c8_r.replace("三十八", "38");
+						c8_r = c8_r.replace("三十七", "37");
+						c8_r = c8_r.replace("三十六", "36");
+						c8_r = c8_r.replace("三十五", "35");
+						c8_r = c8_r.replace("三十四", "34");
+						c8_r = c8_r.replace("三十三", "33");
+						c8_r = c8_r.replace("三十二", "32");
+						c8_r = c8_r.replace("三十一", "31");
+						c8_r = c8_r.replace("三十"  , "30");
 						c8_r = c8_r.replace("二十九", "29");
 						c8_r = c8_r.replace("二十八", "28");
 						c8_r = c8_r.replace("二十七", "27");
@@ -126,26 +152,26 @@ var PostNo = function(param){
 						c8_r = c8_r.replace("二十三", "23");
 						c8_r = c8_r.replace("二十二", "22");
 						c8_r = c8_r.replace("二十一", "21");
-						c8_r = c8_r.replace("二十", "20");
-						c8_r = c8_r.replace("十九", "19");
-						c8_r = c8_r.replace("十八", "18");
-						c8_r = c8_r.replace("十七", "17");
-						c8_r = c8_r.replace("十六", "16");
-						c8_r = c8_r.replace("十五", "15");
-						c8_r = c8_r.replace("十四", "14");
-						c8_r = c8_r.replace("十三", "13");
-						c8_r = c8_r.replace("十二", "12");
-						c8_r = c8_r.replace("十一", "11");
-						c8_r = c8_r.replace("十", "10");
-						c8_r = c8_r.replace("九", "9");
-						c8_r = c8_r.replace("八", "8");
-						c8_r = c8_r.replace("七", "7");
-						c8_r = c8_r.replace("六", "6");
-						c8_r = c8_r.replace("五", "5");
-						c8_r = c8_r.replace("四", "4");
-						c8_r = c8_r.replace("三", "3");
-						c8_r = c8_r.replace("二", "2");
-						c8_r = c8_r.replace("一", "1");
+						c8_r = c8_r.replace("二十"  , "20");
+						c8_r = c8_r.replace("十九"  , "19");
+						c8_r = c8_r.replace("十八"  , "18");
+						c8_r = c8_r.replace("十七"  , "17");
+						c8_r = c8_r.replace("十六"  , "16");
+						c8_r = c8_r.replace("十五"  , "15");
+						c8_r = c8_r.replace("十四"  , "14");
+						c8_r = c8_r.replace("十三"  , "13");
+						c8_r = c8_r.replace("十二"  , "12");
+						c8_r = c8_r.replace("十一"  , "11");
+						c8_r = c8_r.replace("十"    , "10");
+						c8_r = c8_r.replace("九"    , "9");
+						c8_r = c8_r.replace("八"    , "8");
+						c8_r = c8_r.replace("七"    , "7");
+						c8_r = c8_r.replace("六"    , "6");
+						c8_r = c8_r.replace("五"    , "5");
+						c8_r = c8_r.replace("四"    , "4");
+						c8_r = c8_r.replace("三"    , "3");
+						c8_r = c8_r.replace("二"    , "2");
+						c8_r = c8_r.replace("一"    , "1");
 
 						//console.log(param);
 						//console.log(c7+c8, c7+c8_r);
