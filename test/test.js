@@ -18,9 +18,19 @@ var PostNo = function(){
 	//var pref_no = "46";
 
 	var param = "埼玉県比企郡小川町小川1619";
-	var pref_no = "11";
 
-	
+	var data ={
+		"北海道":{"no":"01"},
+		"埼玉県":{"no":"11"},
+		"鹿児島":{"no":"46"},
+		"沖縄県":{"no":"47"}
+	};
+
+	var pref_nm = param.slice(0, 3);
+	var pref_no = data[pref_nm]["no"];
+
+	console.log(pref_nm);
+	console.log(pref_no);
 
 	var isExist = false;
 
@@ -51,52 +61,10 @@ var PostNo = function(){
 						c7 = c7.trim();
 						c8 = c8.trim();
 
-						/*
-						if ( ( c7 != "" && param.indexOf(c7) != -1 ) || ( c8 != "" && param.indexOf(c8) != -1 ) ){
-							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
-							console.log(column[2] , column[6] + column[7] + column[8] );
-						}
-						*/
-
 						if ( param.indexOf(c7+c8) != -1 ){
 							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
 							console.log(column[2] , column[6] + column[7] + column[8] );
 						}
-
-						/*
-						var isC7 = false;
-						var isC8 = false;
-
-						for( var j=0; j<param.length; j++ )
-						{
-							if( c7.indexOf(param[j]) != -1 )
-							{
-								console.log(c7);
-								console.log(param[j]);
-								isC7 = true;
-								break;
-							}
-						}
-
-						if( isC7 )
-						{
-							for( var j=0; j<param.length; j++ )
-							{
-								if( c8.indexOf(param[j]) != -1 )
-								{
-									console.log(c8);
-									console.log(param[j]);
-									isC8 = true;
-									break;
-								}
-							}
-						}
-
-						if( isC7 && isC8 )
-						{
-							//console.log(column[2] , column[6] + column[7] + column[8] );
-						}
-						*/
 
 					}else{
 
