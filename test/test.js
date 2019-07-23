@@ -40,8 +40,8 @@ var PostNo = function(){
 
 						var column = line[i].split(',');
 
-						if ( param.indexOf(column[7]) != -1 && param.indexOf(column[8]) != -1) {
-							// param‚Écolumn[7]‚ğŠÜ‚Ş & param‚Écolumn[8]‚ğŠÜ‚Ş
+						if ( param.indexOf(column[7]) != -1 || param.indexOf(column[8]) != -1) {
+							// param‚Écolumn[7]‚ğŠÜ‚Ş or param‚Écolumn[8]‚ğŠÜ‚Ş
 							console.log(column[2] , column[6] + column[7] + column[8] );
 						}
 
