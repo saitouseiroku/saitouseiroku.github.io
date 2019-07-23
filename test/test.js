@@ -40,8 +40,8 @@ var PostNo = function(){
 
 						var column = line[i].split(',');
 
-						var c7 = column[7].replace('"', '') ;
-						var c8 = column[8].replace('"', '') ;
+						var c7 = column[7].replace('"', '').replace('"', '') ;
+						var c8 = column[8].replace('"', '').replace('"', '') ;
 						c7 = c7.trim();
 						c8 = c8.trim();
 
