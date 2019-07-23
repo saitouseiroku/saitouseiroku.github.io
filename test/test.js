@@ -45,7 +45,7 @@ var PostNo = function(){
 						c7 = c7.trim();
 						c8 = c8.trim();
 
-						console.log(c7, c8);
+						//console.log(c7, c8);
 
 						if ( param.indexOf(c7) != -1 || param.indexOf(c8) != -1) {
 							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
