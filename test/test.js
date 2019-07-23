@@ -59,7 +59,7 @@ var PostNo = function(){
 
 						for( var j=0; j<param.length; j++ )
 						{
-							if( c7.indexOf(param[j]) )
+							if( c7.indexOf(param[j]) != -1 )
 							{
 								isC7 = true;
 								break;
@@ -70,7 +70,7 @@ var PostNo = function(){
 						{
 							for( var j=0; j<param.length; j++ )
 							{
-								if( c8.indexOf(param[j]) )
+								if( c8.indexOf(param[j]) != -1 )
 								{
 									isC8 = true;
 									break;
