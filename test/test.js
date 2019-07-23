@@ -40,7 +40,14 @@ var PostNo = function(){
 
 						var column = line[i].split(',');
 
-						if ( param.indexOf(column[7]) != -1 || param.indexOf(column[8]) != -1) {
+						var c7 = column[7].replace('"', '') ;
+						var c8 = column[8].replace('"', '') ;
+						c7 = c7.trim();
+						c8 = c8.trim();
+
+						console.log(c7, c8);
+
+						if ( param.indexOf(c7) != -1 || param.indexOf(c8) != -1) {
 							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
 							console.log(column[2] , column[6] + column[7] + column[8] );
 						}
