@@ -19,7 +19,16 @@ var PostNo = function(){
 			if(rawFile.status === 200 || rawFile.status == 0)
 			{
 				var allText = rawFile.responseText.split(/\n/);;
-				alert(allText[0]); 
+				//alert(allText[0]); 
+
+				for (var i=0; i<allText.length; i++)
+				{
+					if( allText[i].slice(0, 2) == prefectures )
+					{
+						console.log(allText[i]);
+					}
+				}
+
 			}
 		}
 	}
