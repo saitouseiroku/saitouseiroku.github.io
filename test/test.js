@@ -38,7 +38,7 @@ var PostNo = function(){
 						//console.log(line[i]);
 						isExist = true;
 
-						var column = line.split(',');
+						var column = line[i].split(',');
 						console.log(column[2] , column[6] + column[7] + column[8] );
 
 					}else{
