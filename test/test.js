@@ -3,18 +3,18 @@ var PostNo = function(){
 	console.log("index");
 /*
 	var fs = require("fs");
-	// “¯Šú
+	// åŒæœŸ
 	var text = fs.readFileSync("./test.csv");
 	var textByLine = text.split("\n");
 	console.log(textByLine);
 
-	// ”ñ“¯Šú
+	// éåŒæœŸ
 	fs.readFile("./test.txt", function(text){
 		var textByLine = text.split("\n")
 	});
 */
 
-	var param = "­™“‡Œ§‰‚”üs";
+	var param = "é¹¿å…å³¶çœŒå¥„ç¾å¸‚";
 	var pref_no = "46";
 	var isExist = false;
 
@@ -41,7 +41,7 @@ var PostNo = function(){
 						var column = line[i].split(',');
 
 						if ( param.indexOf(column[7]) != -1 || param.indexOf(column[8]) != -1) {
-							// param‚Écolumn[7]‚ğŠÜ‚Ş or param‚Écolumn[8]‚ğŠÜ‚Ş
+							// paramã«column[7]ã‚’å«ã‚€ or paramã«column[8]ã‚’å«ã‚€
 							console.log(column[2] , column[6] + column[7] + column[8] );
 						}
 
