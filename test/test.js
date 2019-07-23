@@ -15,13 +15,12 @@ var PostNo = function(){
 */
 
 	//var param = "鹿児島県奄美市名瀬幸町25-8";
-	//var pref_no = "46";
-
-	var param = "埼玉県比企郡小川町小川1619";
+	//var param = "埼玉県比企郡小川町小川1619";
 	var param = "北海道札幌市中央区北1条西2丁目";
 
 	var data ={
 		"北海道":{"no":"01"},
+		"青森県":{"no":"02"},
 		"埼玉県":{"no":"11"},
 		"鹿児島":{"no":"46"},
 		"沖縄県":{"no":"47"}
@@ -57,12 +56,43 @@ var PostNo = function(){
 
 						var column = line[i].split(',');
 
-						var c7 = column[7].replace('"', '').replace('"', '') ;
-						var c8 = column[8].replace('"', '').replace('"', '') ;
+						var c7 = column[7].replace('"', '').replace('"', '');
+						var c8 = column[8].replace('"', '').replace('"', '');
 						c7 = c7.trim();
 						c8 = c8.trim();
 
-						if ( param.indexOf(c7+c8) != -1 ){
+						var c8_r;
+						c8_r = c8.replace("二十九", "29");
+						c8_r = c8.replace("二十八", "28");
+						c8_r = c8.replace("二十七", "27");
+						c8_r = c8.replace("二十六", "26");
+						c8_r = c8.replace("二十五", "25");
+						c8_r = c8.replace("二十四", "24");
+						c8_r = c8.replace("二十三", "23");
+						c8_r = c8.replace("二十二", "22");
+						c8_r = c8.replace("二十一", "21");
+						c8_r = c8.replace("二十", "20");
+						c8_r = c8.replace("十九", "19");
+						c8_r = c8.replace("十八", "18");
+						c8_r = c8.replace("十七", "17");
+						c8_r = c8.replace("十六", "16");
+						c8_r = c8.replace("十五", "15");
+						c8_r = c8.replace("十四", "14");
+						c8_r = c8.replace("十三", "13");
+						c8_r = c8.replace("十二", "12");
+						c8_r = c8.replace("十一", "11");
+						c8_r = c8.replace("十", "10");
+						c8_r = c8.replace("九", "9");
+						c8_r = c8.replace("八", "8");
+						c8_r = c8.replace("七", "7");
+						c8_r = c8.replace("六", "6");
+						c8_r = c8.replace("五", "5");
+						c8_r = c8.replace("四", "4");
+						c8_r = c8.replace("三", "3");
+						c8_r = c8.replace("二", "2");
+						c8_r = c8.replace("一", "1");
+
+						if ( param.indexOf(c7+c8) != -1 || param.indexOf(c7+c8_r) != -1 ){
 							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
 							console.log(column[2] , column[6] + column[7] + column[8] );
 						}
