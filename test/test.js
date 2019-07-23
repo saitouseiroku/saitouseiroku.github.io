@@ -10,6 +10,7 @@ var PostNo = function(){
 */
 	var file = "https://saitouseiroku.github.io/test/test.csv";
 	var rawFile = new XMLHttpRequest();
+	var prefectures = "01";
 	rawFile.open("GET", file, false);
 	rawFile.onreadystatechange = function ()
 	{
@@ -17,8 +18,8 @@ var PostNo = function(){
 		{
 			if(rawFile.status === 200 || rawFile.status == 0)
 			{
-				var allText = rawFile.responseText;
-				alert(allText); 
+				var allText = rawFile.responseText.split(/\n/);;
+				alert(allText[0]); 
 			}
 		}
 	}
