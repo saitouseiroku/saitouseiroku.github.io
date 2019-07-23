@@ -1,0 +1,31 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type='text/javascript' src='https://saitouseiroku.github.io/postno/api.js'></script>
+<script>
+	$(function(){
+/*
+		var p1  = "–kŠC“¹D–ys’†‰›‹æ–k1ğ¼2’š–Ú";
+		var p2  = "ŠâèŒ§·‰ªs·‰ª‰w‘O’Ê1”Ô44†";
+		var p3  = "é‹ÊŒ§”äŠéŒS¬ì’¬¬ì1619";
+		var p26 = "‹“s•{‹“ss¶‹‹æ‰ºŠ›”¼–Ø’¬1-5";
+		var p46 = "­™“‡Œ§‰‚”üs–¼£K’¬25-8";
+
+		PostNo(p1);
+		PostNo(p2);
+		PostNo(p3);
+		PostNo(p26);
+		PostNo(p46);
+*/
+		$("#search").click(function(){
+			$("#res").val( PostNo($("#address").val()) );
+		});
+	});
+</script>
+</head>
+<body>
+<input type="text" id="address" style="font-size:12px;width:300px;" value="" placeholder="ZŠF“s“¹•{Œ§–¼‚©‚ç">
+<input type="button" id="search" style="font-size:12px;width:50px;" value="ŒŸõ"><br>
+<textarea id="res" style="font-size:12px;height:100px;width:300px;"></textarea>
+</body>
+</html>
