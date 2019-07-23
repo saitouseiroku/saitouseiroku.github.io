@@ -98,6 +98,10 @@ var PostNo = function(){
 						c8_r = c8.replace("二", "2");
 						c8_r = c8.replace("一", "1");
 
+						console.log(param);
+						console.log(c7+c8);
+						console.log(c7+c8_r);
+
 						if ( param.indexOf(c7+c8) != -1 || param.indexOf(c7+c8_r) != -1 ){
 							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
 							console.log(column[2] , column[6] + column[7] + column[8] );
