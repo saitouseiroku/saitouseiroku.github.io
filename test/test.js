@@ -14,7 +14,7 @@ var PostNo = function(){
 	});
 */
 
-	var param = "鹿児島県奄美市";
+	var param = "鹿児島県奄美市名瀬";
 	var pref_no = "46";
 	var isExist = false;
 
