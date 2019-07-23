@@ -8,9 +8,9 @@ var PostNo = function(){
 	var textByLine = text.split("\n");
 	console.log(textByLine);
 */
-
+	var file = "https://saitouseiroku.github.io/test/test.csv";
 	var rawFile = new XMLHttpRequest();
-	rawFile.open("GET", "./test.csv", false);
+	rawFile.open("GET", file, false);
 	rawFile.onreadystatechange = function ()
 	{
 		if(rawFile.readyState === 4)
