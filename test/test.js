@@ -34,6 +34,7 @@ var PostNo = function(){
 
 	var isExist = false;
 
+	// この↓ファイルはShift_JIS
 	var file = "https://saitouseiroku.github.io/test/KEN_ALL.CSV";
 
 	var rawFile = new XMLHttpRequest();
@@ -69,40 +70,39 @@ var PostNo = function(){
 						c7 = c7.trim();
 						c8 = c8.trim();
 
-						var c8_r;
-						c8_r = c8.replace("二十九", "29");
-						c8_r = c8.replace("二十八", "28");
-						c8_r = c8.replace("二十七", "27");
-						c8_r = c8.replace("二十六", "26");
-						c8_r = c8.replace("二十五", "25");
-						c8_r = c8.replace("二十四", "24");
-						c8_r = c8.replace("二十三", "23");
-						c8_r = c8.replace("二十二", "22");
-						c8_r = c8.replace("二十一", "21");
-						c8_r = c8.replace("二十", "20");
-						c8_r = c8.replace("十九", "19");
-						c8_r = c8.replace("十八", "18");
-						c8_r = c8.replace("十七", "17");
-						c8_r = c8.replace("十六", "16");
-						c8_r = c8.replace("十五", "15");
-						c8_r = c8.replace("十四", "14");
-						c8_r = c8.replace("十三", "13");
-						c8_r = c8.replace("十二", "12");
-						c8_r = c8.replace("十一", "11");
-						c8_r = c8.replace("十", "10");
-						c8_r = c8.replace("九", "9");
-						c8_r = c8.replace("八", "8");
-						c8_r = c8.replace("七", "7");
-						c8_r = c8.replace("六", "6");
-						c8_r = c8.replace("五", "5");
-						c8_r = c8.replace("四", "4");
-						c8_r = c8.replace("三", "3");
-						c8_r = c8.replace("二", "2");
-						c8_r = c8.replace("一", "1");
+						var c8_r = c8;
+						c8_r = c8_r.replace("二十九", "29");
+						c8_r = c8_r.replace("二十八", "28");
+						c8_r = c8_r.replace("二十七", "27");
+						c8_r = c8_r.replace("二十六", "26");
+						c8_r = c8_r.replace("二十五", "25");
+						c8_r = c8_r.replace("二十四", "24");
+						c8_r = c8_r.replace("二十三", "23");
+						c8_r = c8_r.replace("二十二", "22");
+						c8_r = c8_r.replace("二十一", "21");
+						c8_r = c8_r.replace("二十", "20");
+						c8_r = c8_r.replace("十九", "19");
+						c8_r = c8_r.replace("十八", "18");
+						c8_r = c8_r.replace("十七", "17");
+						c8_r = c8_r.replace("十六", "16");
+						c8_r = c8_r.replace("十五", "15");
+						c8_r = c8_r.replace("十四", "14");
+						c8_r = c8_r.replace("十三", "13");
+						c8_r = c8_r.replace("十二", "12");
+						c8_r = c8_r.replace("十一", "11");
+						c8_r = c8_r.replace("十", "10");
+						c8_r = c8_r.replace("九", "9");
+						c8_r = c8_r.replace("八", "8");
+						c8_r = c8_r.replace("七", "7");
+						c8_r = c8_r.replace("六", "6");
+						c8_r = c8_r.replace("五", "5");
+						c8_r = c8_r.replace("四", "4");
+						c8_r = c8_r.replace("三", "3");
+						c8_r = c8_r.replace("二", "2");
+						c8_r = c8_r.replace("一", "1");
 
-						console.log(param);
-						console.log(c7+c8);
-						console.log(c7+c8_r);
+						//console.log(param);
+						//console.log(c7+c8, c7+c8_r);
 
 						if ( param.indexOf(c7+c8) != -1 || param.indexOf(c7+c8_r) != -1 ){
 							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
