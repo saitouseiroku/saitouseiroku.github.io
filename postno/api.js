@@ -81,7 +81,7 @@ var PostNo = function(param){
 	console.log(pref_no);
 
 	var isExist = false;
-	var res;
+	var res = "";
 
 	// この↓ファイルはShift_JIS
 	var file = "https://saitouseiroku.github.io/postno/KEN_ALL.CSV";
@@ -186,8 +186,14 @@ var PostNo = function(param){
 
 						if ( param.indexOf(c7+c8) != -1 || param.indexOf(c7+c8_r) != -1 ){
 							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
-							console.log(column[2] , column[6] + column[7] + column[8] );
-							res += column[2] + "," + c6 + c7 + c8 + ";";
+
+							var r2 = column[2].replace('"', '').replace('"', '');
+							var r6 = column[6].replace('"', '').replace('"', '');
+							var r7 = column[7].replace('"', '').replace('"', '');
+							var r8 = column[8].replace('"', '').replace('"', '');
+
+							console.log(r2, r6 + r7 + r8);
+							res += r2 + "," + r6 + r7 + r8 + ";";
 						}
 
 					}else{
