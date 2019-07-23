@@ -18,6 +18,7 @@ var PostNo = function(){
 	//var pref_no = "46";
 
 	var param = "埼玉県比企郡小川町小川1619";
+	var param = "北海道札幌市中央区北1条西2丁目";
 
 	var data ={
 		"北海道":{"no":"01"},
