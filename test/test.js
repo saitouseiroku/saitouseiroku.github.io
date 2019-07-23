@@ -14,9 +14,14 @@ var PostNo = function(){
 	});
 */
 
-	//var param = "鹿児島県奄美市名瀬";
-	var param = "鹿児島県奄美市名瀬幸町25-8";
-	var pref_no = "46";
+	//var param = "鹿児島県奄美市名瀬幸町25-8";
+	//var pref_no = "46";
+
+	var param = "埼玉県比企郡小川町小川1619";
+	var pref_no = "11";
+
+	
+
 	var isExist = false;
 
 	var file = "https://saitouseiroku.github.io/test/test.csv";
