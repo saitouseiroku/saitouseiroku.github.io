@@ -21,7 +21,9 @@
 		PostNo(p46);
 */
 		$("#search").click(function(){
-			$("#res").val( PostNo($("#address").val()) );
+			var res = PostNo($("#address").val());
+			console.log(res);
+			$("#res").val( res );
 		});
 	});
 </script>
