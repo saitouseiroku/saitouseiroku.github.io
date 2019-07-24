@@ -193,8 +193,6 @@ var PostNo = function(param){
 							var r8 = column[8].replace('"', '').replace('"', '');
 
 							console.log(r2, r6 + r7 + r8);
-							//res += r2 + "," + r6 + r7 + r8 + ";";
-							res = [];
 
 							var data = {no:r2, adr:r6 + r7 + r8};
 							res.push(data);
