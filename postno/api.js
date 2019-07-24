@@ -196,7 +196,6 @@ var PostNo = function(param){
 
 							var data = {no:r2, adr:r6 + r7 + r8};
 							res.push(data);
-							res = JSON.stringify(res);
 
 							//{ "object_list": [{ "no":"r2", "adr":"r6 + r7 + r8" }]}
 						}
@@ -213,5 +212,6 @@ var PostNo = function(param){
 		}
 	}
 	rawFile.send(null);
+	res = JSON.stringify(res);
 	return res;
 }
