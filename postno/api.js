@@ -142,7 +142,8 @@ var PostNo = function(obj, callback){
 
 									console.log(r2, r6 + r7 + r8);
 
-									var data = {no:r2, adr:r6 + r7 + r8};
+									//var data = {no:r2, adr:r6 + r7 + r8};
+									var data = {no:r2, adr:r6 + r7 + r8, level:2};
 									res.push(data);
 
 								}else{
@@ -156,7 +157,8 @@ var PostNo = function(obj, callback){
 
 										console.log(r2, r6 + r7 + r8);
 
-										var data = {no:r2, adr:r6 + r7 + r8};
+										//var data = {no:r2, adr:r6 + r7 + r8};
+										var data = {no:r2, adr:r6 + r7 + r8, level:1};
 										res.push(data);
 									}
 								}
@@ -209,7 +211,8 @@ var PostNo = function(obj, callback){
 
 								console.log(r2, r6 + r7 + r8);
 
-								var data = {no:r2, adr:r6 + r7 + r8};
+								//var data = {no:r2, adr:r6 + r7 + r8};
+								var data = {no:r2, adr:r6 + r7 + r8, level:2};
 								res.push(data);
 
 							}else{
@@ -223,7 +226,8 @@ var PostNo = function(obj, callback){
 
 									console.log(r2, r6 + r7 + r8);
 
-									var data = {no:r2, adr:r6 + r7 + r8};
+									//var data = {no:r2, adr:r6 + r7 + r8};
+									var data = {no:r2, adr:r6 + r7 + r8, level:1};
 									res.push(data);
 								}
 							}
@@ -233,6 +237,17 @@ var PostNo = function(obj, callback){
 						}
 					}
 				}
+
+				var real_res = [];
+
+				for( var i=0; i<res.length; i++ )
+				{
+					if( res[i]['level'] == 2 )
+					{
+						real_res = res[i];
+					}
+				}
+
 				res = JSON.stringify(res);
 				callback(res);
 			}
