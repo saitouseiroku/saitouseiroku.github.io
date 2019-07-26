@@ -220,10 +220,10 @@ var PostNo = function(obj, callback){
 
 								// adrにcolumn[7]を含む or adrにcolumn[8]を含む
 
-								console.log("1", column[2]);
-								console.log("2", column[6]);
-								console.log("3", column[7]);
-								console.log("4", column[8]);
+								//console.log("1", column[2]);
+								//console.log("2", column[6]);
+								//console.log("3", column[7]);
+								//console.log("4", column[8]);
 
 								var r2 = trimD(column[2]);
 								var r6 = trimD(column[6]);
@@ -268,7 +268,6 @@ var PostNo = function(obj, callback){
 										var data = {no:r2, adr:r6 + r7 + r8, level:1};
 										res.push(data);
 									}
-
 								}
 							}
 
@@ -294,7 +293,6 @@ var PostNo = function(obj, callback){
 					}
 					console.log("res_lv3_length", res_lv3.length);
 					res = res_lv3;
-
 				}
 				else{
 

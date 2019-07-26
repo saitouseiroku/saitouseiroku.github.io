@@ -24,6 +24,14 @@
 			var callback = function(res){
 				console.log(res);
 				$("#res").val( res );
+
+				var arr_res = JSON.parse(res);
+
+				for( var i=0; i<arr_res.length; i++ )
+				{
+					console.log( arr_res[i]['no'] );
+					console.log( arr_res[i]['adr'] );
+				}
 			}
 
 			PostNo(obj, callback);
@@ -78,6 +86,8 @@ hr{
 		<input type="text" id="address" class="a" placeholder="住所を都道府県名から入力してください">
 		<input type="button" id="search" class="s" value="検索"><br>
 		<textarea id="res" class="res"></textarea>
+		<div>
+		</div>
 		<!--
 		<hr>
 		-->
