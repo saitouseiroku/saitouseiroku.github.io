@@ -1,4 +1,4 @@
-var PostNo = function(param){
+var PostNo = function(obj){
 
 /*
 	var fs = require("fs");
@@ -13,7 +13,18 @@ var PostNo = function(param){
 	});
 */
 
-	if( !param )
+	try{
+		if( !obj )
+		{
+			return;
+		}
+
+		if( !obj.adr )
+		{
+			return;
+		}
+
+	}catch(e)
 	{
 		return;
 	}
@@ -69,7 +80,7 @@ var PostNo = function(param){
 	};
 
 	try{
-		var pref_nm = param.slice(0, 3);
+		var pref_nm = obj.adr.slice(0, 3);
 		var pref_no = data[pref_nm]["no"];
 
 	}catch(e)
@@ -181,11 +192,9 @@ var PostNo = function(param){
 						c8_r = c8_r.replace("二"    , "2");
 						c8_r = c8_r.replace("一"    , "1");
 
-						//console.log(param);
-						//console.log(c7+c8, c7+c8_r);
+						if ( obj.adr.indexOf(c7+c8) != -1 || obj.adr.indexOf(c7+c8_r) != -1 ){
 
-						if ( param.indexOf(c7+c8) != -1 || param.indexOf(c7+c8_r) != -1 ){
-							// paramにcolumn[7]を含む or paramにcolumn[8]を含む
+							// obj.adrにcolumn[7]を含む or obj.adrにcolumn[8]を含む
 
 							var r2 = column[2].replace('"', '').replace('"', '');
 							var r6 = column[6].replace('"', '').replace('"', '');
@@ -196,8 +205,6 @@ var PostNo = function(param){
 
 							var data = {no:r2, adr:r6 + r7 + r8};
 							res.push(data);
-
-							//{ "object_list": [{ "no":"r2", "adr":"r6 + r7 + r8" }]}
 						}
 
 					}else{

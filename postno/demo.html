@@ -21,9 +21,13 @@
 		PostNo(p46);
 */
 		$("#search").click(function(){
-			var res = PostNo($("#address").val());
-			console.log(res);
+
+			var obj={};
+			obj.adr = $("#address").val();
+
+			var res = PostNo(obj);
 			$("#res").val( res );
+			console.log(res);
 		});
 	});
 </script>
