@@ -278,6 +278,8 @@ var PostNo = function(obj, callback){
 					}
 				}
 
+				console.log("res.length", res.length);
+
 				var res_lv3 = [];
 				var res_lv2 = [];
 
