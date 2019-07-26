@@ -223,7 +223,7 @@ console.log("7");
 						{
 console.log("8");
 							res = JSON.stringify(res);
-							callback = res;
+							callback.apply(res(;
 							break;
 							//return res;
 						}
