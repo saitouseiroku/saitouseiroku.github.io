@@ -292,6 +292,7 @@ var PostNo = function(obj, callback){
 							res_lv3 = res[i];
 						}
 					}
+					console.log("res_lv3_length", res_lv3.length);
 					res = res_lv3;
 
 				}
@@ -306,6 +307,7 @@ var PostNo = function(obj, callback){
 								res_lv2 = res[i];
 							}
 						}
+						console.log("res_lv2_length", res_lv2.length);
 						res = res_lv2;
 					}
 				}
