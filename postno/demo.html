@@ -27,10 +27,26 @@
 
 				var arr_res = JSON.parse(res);
 
+				$("#tbl").empty;
+				var tbl = $("#tbl");
+				var tr;
+				var td;
+
 				for( var i=0; i<arr_res.length; i++ )
 				{
 					console.log( arr_res[i]['no'] );
 					console.log( arr_res[i]['adr'] );
+
+					tr = $('<tr>');
+					td = $('<td>');
+					td.html(arr_res[i]['no']);
+					tr.append(td);
+
+					td = $('<td>');
+					td.html(arr_res[i]['adr']);
+					tr.append(td);
+
+					tbl.append(tr);
 				}
 			}
 
@@ -87,6 +103,8 @@ hr{
 		<input type="button" id="search" class="s" value="検索"><br>
 		<textarea id="res" class="res"></textarea>
 		<div>
+			<table id="tbl">
+			</table>
 		</div>
 		<!--
 		<hr>
