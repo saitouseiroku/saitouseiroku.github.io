@@ -37,6 +37,21 @@
 					console.log( arr_res[i]['no'] );
 					console.log( arr_res[i]['adr'] );
 
+					if( i == 0 )
+					{
+						tr = $('<tr>');
+						tr.css('background', '#F5F4E8');
+						td = $('<td>');
+						td.html("郵便番号");
+						tr.append(td);
+
+						td = $('<td>');
+						td.html("住所");
+						tr.append(td);
+
+						tbl.append(tr);
+					}
+
 					tr = $('<tr>');
 					td = $('<td>');
 					td.html(arr_res[i]['no']);
