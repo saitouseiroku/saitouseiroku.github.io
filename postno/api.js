@@ -289,7 +289,7 @@ var PostNo = function(obj, callback){
 					{
 						if( res[i]['level'] == 3 )
 						{
-							res_lv3 = res[i];
+							res_lv3.push(res[i]);
 						}
 					}
 					console.log("res_lv3_length", res_lv3.length);
@@ -304,7 +304,7 @@ var PostNo = function(obj, callback){
 						{
 							if( res[i]['level'] == 2 )
 							{
-								res_lv2 = res[i];
+								res_lv2.push(res[i]);
 							}
 						}
 						console.log("res_lv2_length", res_lv2.length);
