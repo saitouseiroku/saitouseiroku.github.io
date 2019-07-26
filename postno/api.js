@@ -144,6 +144,21 @@ var PostNo = function(obj, callback){
 
 									var data = {no:r2, adr:r6 + r7 + r8};
 									res.push(data);
+
+								}else{
+
+									if( adr.indexOf(c7) != -1 || adr.indexOf(c8) != -1 || adr.indexOf(c8_r) != -1 )
+									{
+										var r2 = trimD(column[2]);
+										var r6 = trimD(column[6]);
+										var r7 = trimD(column[7]);
+										var r8 = trimD(column[8]);
+
+										console.log(r2, r6 + r7 + r8);
+
+										var data = {no:r2, adr:r6 + r7 + r8};
+										res.push(data);
+									}
 								}
 
 							}catch(e)
@@ -196,6 +211,21 @@ var PostNo = function(obj, callback){
 
 								var data = {no:r2, adr:r6 + r7 + r8};
 								res.push(data);
+
+							}else{
+
+								if( adr.indexOf(c7) != -1 || adr.indexOf(c8) != -1 || adr.indexOf(c8_r) != -1 )
+								{
+									var r2 = trimD(column[2]);
+									var r6 = trimD(column[6]);
+									var r7 = trimD(column[7]);
+									var r8 = trimD(column[8]);
+
+									console.log(r2, r6 + r7 + r8);
+
+									var data = {no:r2, adr:r6 + r7 + r8};
+									res.push(data);
+								}
 							}
 
 						}catch(e)
