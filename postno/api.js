@@ -196,6 +196,9 @@ var PostNo = function(obj, callback){
 								var data = {no:r2, adr:r6 + r7 + r8};
 								res.push(data);
 							}
+
+						}catch(e)
+						{
 						}
 					}
 				}
