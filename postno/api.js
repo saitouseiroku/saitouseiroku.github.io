@@ -85,6 +85,7 @@ var PostNo = function(obj, callback){
 
 	var isExist = false;
 	var res = [];
+	var isLevel3 = false;
 	var isLevel2 = false;
 
 	// この↓ファイルはShift_JIS
@@ -144,13 +145,13 @@ var PostNo = function(obj, callback){
 									console.log(r2, r6 + r7 + r8);
 
 									//var data = {no:r2, adr:r6 + r7 + r8};
-									var data = {no:r2, adr:r6 + r7 + r8, level:2};
+									var data = {no:r2, adr:r6 + r7 + r8, level:3};
 									res.push(data);
-									isLevel2 = true;
+									isLevel3 = true;
 
 								}else{
 
-									if( adr.indexOf(c7) != -1 || adr.indexOf(c8) != -1 || adr.indexOf(c8_r) != -1 )
+									if( adr.indexOf(c7) != -1 )
 									{
 										var r2 = trimD(column[2]);
 										var r6 = trimD(column[6]);
@@ -160,8 +161,26 @@ var PostNo = function(obj, callback){
 										console.log(r2, r6 + r7 + r8);
 
 										//var data = {no:r2, adr:r6 + r7 + r8};
-										var data = {no:r2, adr:r6 + r7 + r8, level:1};
+										var data = {no:r2, adr:r6 + r7 + r8, level:2};
 										res.push(data);
+										isLevel2 = true;
+									}
+									else{
+
+										if( adr.indexOf(c8) != -1 || adr.indexOf(c8_r) != -1 )
+										{
+											var r2 = trimD(column[2]);
+											var r6 = trimD(column[6]);
+											var r7 = trimD(column[7]);
+											var r8 = trimD(column[8]);
+
+											console.log(r2, r6 + r7 + r8);
+
+											//var data = {no:r2, adr:r6 + r7 + r8};
+											var data = {no:r2, adr:r6 + r7 + r8, level:1};
+											res.push(data);
+										}
+
 									}
 								}
 
@@ -214,13 +233,13 @@ var PostNo = function(obj, callback){
 								console.log(r2, r6 + r7 + r8);
 
 								//var data = {no:r2, adr:r6 + r7 + r8};
-								var data = {no:r2, adr:r6 + r7 + r8, level:2};
+								var data = {no:r2, adr:r6 + r7 + r8, level:3};
 								res.push(data);
-								isLevel2 = true;
+								isLevel3 = true;
 
 							}else{
 
-								if( adr.indexOf(c7) != -1 || adr.indexOf(c8) != -1 || adr.indexOf(c8_r) != -1 )
+								if( adr.indexOf(c7) != -1 )
 								{
 									var r2 = trimD(column[2]);
 									var r6 = trimD(column[6]);
@@ -230,8 +249,26 @@ var PostNo = function(obj, callback){
 									console.log(r2, r6 + r7 + r8);
 
 									//var data = {no:r2, adr:r6 + r7 + r8};
-									var data = {no:r2, adr:r6 + r7 + r8, level:1};
+									var data = {no:r2, adr:r6 + r7 + r8, level:2};
 									res.push(data);
+									isLevel2 = true;
+								}
+								else{
+
+									if( adr.indexOf(c8) != -1 || adr.indexOf(c8_r) != -1 )
+									{
+										var r2 = trimD(column[2]);
+										var r6 = trimD(column[6]);
+										var r7 = trimD(column[7]);
+										var r8 = trimD(column[8]);
+
+										console.log(r2, r6 + r7 + r8);
+
+										//var data = {no:r2, adr:r6 + r7 + r8};
+										var data = {no:r2, adr:r6 + r7 + r8, level:1};
+										res.push(data);
+									}
+
 								}
 							}
 
@@ -241,18 +278,34 @@ var PostNo = function(obj, callback){
 					}
 				}
 
+				var res_lv3 = [];
 				var res_lv2 = [];
 
-				if( isLevel2 )
+				if( isLevel3 )
 				{
 					for( var i=0; i<res.length; i++ )
 					{
-						if( res[i]['level'] == 2 )
+						if( res[i]['level'] == 3 )
 						{
-							res_lv2 = res[i];
+							res_lv3 = res[i];
 						}
 					}
-					res = res_lv2;
+					res = res_lv3;
+
+				}
+				else{
+
+					if( isLevel2 )
+					{
+						for( var i=0; i<res.length; i++ )
+						{
+							if( res[i]['level'] == 2 )
+							{
+								res_lv2 = res[i];
+							}
+						}
+						res = res_lv2;
+					}
 				}
 
 				res = JSON.stringify(res);
