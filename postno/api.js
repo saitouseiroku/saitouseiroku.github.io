@@ -100,7 +100,7 @@ var PostNo = function(obj){
 	var rawFile = new XMLHttpRequest();
 
 	rawFile.overrideMimeType("text/plain; charset=shift_jis");
-	rawFile.open("GET", file, false);
+	rawFile.open("GET", file, true);
 	rawFile.onreadystatechange = function ()
 	{
 		if(rawFile.readyState === 4)
