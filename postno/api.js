@@ -85,6 +85,7 @@ var PostNo = function(obj, callback){
 
 	var isExist = false;
 	var res = [];
+	var isLevel2 = false;
 
 	// この↓ファイルはShift_JIS
 	var file = "https://saitouseiroku.github.io/postno/KEN_ALL.CSV";
@@ -145,6 +146,7 @@ var PostNo = function(obj, callback){
 									//var data = {no:r2, adr:r6 + r7 + r8};
 									var data = {no:r2, adr:r6 + r7 + r8, level:2};
 									res.push(data);
+									isLevel2 = true;
 
 								}else{
 
@@ -214,6 +216,7 @@ var PostNo = function(obj, callback){
 								//var data = {no:r2, adr:r6 + r7 + r8};
 								var data = {no:r2, adr:r6 + r7 + r8, level:2};
 								res.push(data);
+								isLevel2 = true;
 
 							}else{
 
@@ -238,14 +241,18 @@ var PostNo = function(obj, callback){
 					}
 				}
 
-				var real_res = [];
+				var res_lv2 = [];
 
-				for( var i=0; i<res.length; i++ )
+				if( isLevel2 )
 				{
-					if( res[i]['level'] == 2 )
+					for( var i=0; i<res.length; i++ )
 					{
-						real_res = res[i];
+						if( res[i]['level'] == 2 )
+						{
+							res_lv2 = res[i];
+						}
 					}
+					res = res_lv2;
 				}
 
 				res = JSON.stringify(res);
