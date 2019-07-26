@@ -6,42 +6,34 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type='text/javascript' src='https://saitouseiroku.github.io/postno/api.js?002'></script>
 <script>
+
 	$(function(){
 /*
-		var p1  = "北海道札幌市中央区北1条西2丁目";
-		var p2  = "岩手県盛岡市盛岡駅前通1番44号";
-		var p3  = "埼玉県比企郡小川町小川1619";
-		var p26 = "京都府京都市左京区下鴨半木町1-5";
-		var p46 = "鹿児島県奄美市名瀬幸町25-8";
-
-		PostNo(p1);
-		PostNo(p2);
-		PostNo(p3);
-		PostNo(p26);
-		PostNo(p46);
+	北海道札幌市中央区北1条西2丁目
+	岩手県盛岡市盛岡駅前通1番44号
+	埼玉県比企郡小川町小川1619
+	京都府京都市左京区下鴨半木町1-5
+	鹿児島県奄美市名瀬幸町25-8
 */
-		$("#search").click(function(){
 
-			console.log("search:click");
+		$("#search").click(function(){
 
 			var obj={};
 			obj.adr = $("#address").val();
 
 			var callback = function(res){
-				console.log("***", res);
+				console.log(res);
 				$("#res").val( res );
 			}
 
-			console.log("PostNo:start");
 			PostNo(obj, callback);
-			console.log("PostNo:end");
 		});
 	});
 </script>
 </head>
 <body>
-<input type="text" id="address" style="font-size:12px;width:300px;height:40px;" value="" placeholder="住所：都道府県名から">
-<input type="button" id="search" style="font-size:12px;width:50px;" value="検索"><br>
-<textarea id="res" style="font-size:12px;height:100px;width:300px;margin-top:10px;"></textarea>
+	<input type="text" id="address" style="font-size:12px;width:300px;height:40px;" value="" placeholder="住所：都道府県名から">
+	<input type="button" id="search" style="font-size:12px;width:50px;" value="検索"><br>
+	<textarea id="res" style="font-size:12px;height:100px;width:300px;margin-top:10px;"></textarea>
 </body>
 </html>

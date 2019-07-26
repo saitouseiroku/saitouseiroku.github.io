@@ -1,18 +1,5 @@
 var PostNo = function(obj, callback){
 
-/*
-	var fs = require("fs");
-	// 同期
-	var text = fs.readFileSync("./KEN_ALL.CSV");
-	var textByLine = text.split("\n");
-	console.log(textByLine);
-
-	// 非同期
-	fs.readFile("./test.txt", function(text){
-		var textByLine = text.split("\n")
-	});
-*/
-
 	try{
 		if( !obj )
 		{
