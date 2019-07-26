@@ -67,9 +67,10 @@ var PostNo = function(obj, callback){
 	};
 
 	var isPref = false;
+	var adr = obj.adr;
 
 	try{
-		var pref_nm = obj.adr.slice(0, 3);
+		var pref_nm = adr.slice(0, 3);
 		var pref_no = data[pref_nm]["no"];
 		isPref = true;
 
@@ -114,9 +115,9 @@ var PostNo = function(obj, callback){
 							try{
 								var column = line[i].split(',');
 
-								var c6 = column[6].replace('"', '').replace('"', '');
-								var c7 = column[7].replace('"', '').replace('"', '');
-								var c8 = column[8].replace('"', '').replace('"', '');
+								var c6 = trimD(column[6]);
+								var c7 = trimD(column[7]);
+								var c8 = trimD(column[8]);
 
 								var p;
 								if( ( p = c8.indexOf('（') ) != -1 )
@@ -130,14 +131,14 @@ var PostNo = function(obj, callback){
 
 								var c8_r = convNum(c8);
 
-								if ( obj.adr.indexOf(c7+c8) != -1 || obj.adr.indexOf(c7+c8_r) != -1 ){
+								if ( adr.indexOf(c7+c8) != -1 || adr.indexOf(c7+c8_r) != -1 ){
 
-									// obj.adrにcolumn[7]を含む or obj.adrにcolumn[8]を含む
+									// adrにcolumn[7]を含む or adrにcolumn[8]を含む
 
-									var r2 = column[2].replace('"', '').replace('"', '');
-									var r6 = column[6].replace('"', '').replace('"', '');
-									var r7 = column[7].replace('"', '').replace('"', '');
-									var r8 = column[8].replace('"', '').replace('"', '');
+									var r2 = trimD(column[2]);
+									var r6 = trimD(column[6]);
+									var r7 = trimD(column[7]);
+									var r8 = trimD(column[8]);
 
 									console.log(r2, r6 + r7 + r8);
 
@@ -161,9 +162,9 @@ var PostNo = function(obj, callback){
 						try{
 							var column = line[i].split(',');
 
-							var c6 = column[6].replace('"', '').replace('"', '');
-							var c7 = column[7].replace('"', '').replace('"', '');
-							var c8 = column[8].replace('"', '').replace('"', '');
+							var c6 = trimD(column[6]);
+							var c7 = trimD(column[7]);
+							var c8 = trimD(column[8]);
 
 							var p;
 							if( ( p = c8.indexOf('（') ) != -1 )
@@ -177,19 +178,19 @@ var PostNo = function(obj, callback){
 
 							var c8_r = convNum(c8);
 
-							if ( obj.adr.indexOf(c7+c8) != -1 || obj.adr.indexOf(c7+c8_r) != -1 ){
+							if ( adr.indexOf(c7+c8) != -1 || adr.indexOf(c7+c8_r) != -1 ){
 
-								// obj.adrにcolumn[7]を含む or obj.adrにcolumn[8]を含む
+								// adrにcolumn[7]を含む or adrにcolumn[8]を含む
 
 								console.log("1", column[2]);
 								console.log("2", column[6]);
 								console.log("3", column[7]);
 								console.log("4", column[8]);
 
-								var r2 = column[2].replace('"', '').replace('"', '');
-								var r6 = column[6].replace('"', '').replace('"', '');
-								var r7 = column[7].replace('"', '').replace('"', '');
-								var r8 = column[8].replace('"', '').replace('"', '');
+								var r2 = trimD(column[2]);
+								var r6 = trimD(column[6]);
+								var r7 = trimD(column[7]);
+								var r8 = trimD(column[8]);
 
 								console.log(r2, r6 + r7 + r8);
 
@@ -208,6 +209,11 @@ var PostNo = function(obj, callback){
 		}
 	}
 	rawFile.send(null);
+}
+
+function trimD(v)
+{
+	return v.replace('"', '').replace('"', '');
 }
 
 function convNum(c8_r)
