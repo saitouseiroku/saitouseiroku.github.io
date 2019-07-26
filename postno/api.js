@@ -118,7 +118,6 @@ console.log("5");
 				{
 					if( line[i].slice(0, 2) == pref_no )
 					{
-console.log("6");
 						isExist = true;
 
 						var column = line[i].split(',');
