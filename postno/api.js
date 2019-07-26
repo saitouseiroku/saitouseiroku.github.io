@@ -207,10 +207,7 @@ var PostNo = function(obj, callback){
 
 							if( isExist )
 							{
-								res = JSON.stringify(res);
-								callback(res);
 								break;
-								//return res;
 							}
 						}
 					}else{
@@ -308,6 +305,8 @@ var PostNo = function(obj, callback){
 						}
 					}
 				}
+				res = JSON.stringify(res);
+				callback(res);
 			}
 		}
 	}
