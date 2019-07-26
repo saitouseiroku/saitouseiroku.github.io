@@ -101,7 +101,7 @@ var PostNo = function(obj){
 
 	rawFile.overrideMimeType("text/plain; charset=shift_jis");
 console.log("1");
-	rawFile.open("GET", file, true);
+	rawFile.open("GET", file, false);
 console.log("2");
 	rawFile.onreadystatechange = function ()
 	{
