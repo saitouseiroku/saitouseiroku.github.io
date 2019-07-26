@@ -100,19 +100,25 @@ var PostNo = function(obj){
 	var rawFile = new XMLHttpRequest();
 
 	rawFile.overrideMimeType("text/plain; charset=shift_jis");
+console.log("1");
 	rawFile.open("GET", file, true);
+console.log("2");
 	rawFile.onreadystatechange = function ()
 	{
+console.log("3");
 		if(rawFile.readyState === 4)
 		{
+console.log("4");
 			if(rawFile.status === 200 || rawFile.status == 0)
 			{
+console.log("5");
 				var line = rawFile.responseText.split(/\n/);
 
 				for( var i=0; i<line.length; i++ )
 				{
 					if( line[i].slice(0, 2) == pref_no )
 					{
+console.log("6");
 						isExist = true;
 
 						var column = line[i].split(',');
@@ -194,6 +200,8 @@ var PostNo = function(obj){
 
 						if ( obj.adr.indexOf(c7+c8) != -1 || obj.adr.indexOf(c7+c8_r) != -1 ){
 
+console.log("7");
+
 							// obj.adrにcolumn[7]を含む or obj.adrにcolumn[8]を含む
 
 							var r2 = column[2].replace('"', '').replace('"', '');
@@ -211,6 +219,7 @@ var PostNo = function(obj){
 
 						if( isExist )
 						{
+console.log("8");
 							break;
 						}
 					}
@@ -218,6 +227,7 @@ var PostNo = function(obj){
 			}
 		}
 	}
+console.log("9");
 	rawFile.send(null);
 	res = JSON.stringify(res);
 	return res;
