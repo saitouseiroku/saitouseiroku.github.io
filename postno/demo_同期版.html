@@ -25,12 +25,9 @@
 			var obj={};
 			obj.adr = $("#address").val();
 
-			var callback = function(res){
-				console.log("***", res);
-				$("#res").val( res );
-			}
-
-			PostNo(obj, callback);
+			var res = PostNo(obj);
+			$("#res").val( res );
+			console.log(res);
 		});
 	});
 </script>

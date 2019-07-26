@@ -1,4 +1,4 @@
-var PostNo = function(obj, callback){
+var PostNo = function(obj){
 
 /*
 	var fs = require("fs");
@@ -103,7 +103,7 @@ var PostNo = function(obj, callback){
 console.log("1");
 
 	// false:同期、true:非同期
-	rawFile.open("GET", file, true);
+	rawFile.open("GET", file, false);
 console.log("2");
 
 	rawFile.onreadystatechange = function ()
@@ -222,9 +222,7 @@ console.log("7");
 						if( isExist )
 						{
 console.log("8");
-							res = JSON.stringify(res);
-							callback = res;
-							//return res;
+							break;
 						}
 					}
 				}
@@ -234,4 +232,6 @@ console.log("9");
 	}
 console.log("10");
 	rawFile.send(null);
+	res = JSON.stringify(res);
+	return res;
 }
