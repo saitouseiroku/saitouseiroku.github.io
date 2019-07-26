@@ -214,6 +214,11 @@ var PostNo = function(obj, callback){
 
 						var column = line[i].split(',');
 
+						console.log("0", line[i]);
+						console.log("6", column[6]);
+						console.log("7", column[7]);
+						console.log("8", column[8]);
+
 						var c6 = column[6].replace('"', '').replace('"', '');
 						var c7 = column[7].replace('"', '').replace('"', '');
 						var c8 = column[8].replace('"', '').replace('"', '');
@@ -292,6 +297,11 @@ var PostNo = function(obj, callback){
 						if ( obj.adr.indexOf(c7+c8) != -1 || obj.adr.indexOf(c7+c8_r) != -1 ){
 
 							// obj.adrにcolumn[7]を含む or obj.adrにcolumn[8]を含む
+
+							console.log("1", column[2]);
+							console.log("2", column[6]);
+							console.log("3", column[7]);
+							console.log("4", column[8]);
 
 							var r2 = column[2].replace('"', '').replace('"', '');
 							var r6 = column[6].replace('"', '').replace('"', '');
