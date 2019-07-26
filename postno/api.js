@@ -224,11 +224,11 @@ console.log("8");
 					}
 				}
 console.log("9");
-				rawFile.send(null);
 				res = JSON.stringify(res);
 				return res;
 			}
 		}
 	}
 console.log("10");
+	rawFile.send(null);
 }
