@@ -100,21 +100,16 @@ var PostNo = function(obj, callback){
 	var rawFile = new XMLHttpRequest();
 
 	rawFile.overrideMimeType("text/plain; charset=shift_jis");
-console.log("1");
 
 	// false:同期、true:非同期
 	rawFile.open("GET", file, true);
-console.log("2");
 
 	rawFile.onreadystatechange = function ()
 	{
-console.log("3");
 		if(rawFile.readyState === 4)
 		{
-console.log("4");
 			if(rawFile.status === 200 || rawFile.status == 0)
 			{
-console.log("5");
 				var line = rawFile.responseText.split(/\n/);
 
 				for( var i=0; i<line.length; i++ )
@@ -202,8 +197,6 @@ console.log("5");
 
 						if ( obj.adr.indexOf(c7+c8) != -1 || obj.adr.indexOf(c7+c8_r) != -1 ){
 
-console.log("7");
-
 							// obj.adrにcolumn[7]を含む or obj.adrにcolumn[8]を含む
 
 							var r2 = column[2].replace('"', '').replace('"', '');
@@ -221,7 +214,6 @@ console.log("7");
 
 						if( isExist )
 						{
-console.log("8");
 							res = JSON.stringify(res);
 							callback(res);
 							break;
@@ -229,10 +221,8 @@ console.log("8");
 						}
 					}
 				}
-console.log("9");
 			}
 		}
 	}
-console.log("10");
 	rawFile.send(null);
 }
