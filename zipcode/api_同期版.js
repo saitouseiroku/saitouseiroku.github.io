@@ -1,4 +1,4 @@
-var PostNo = function(obj){
+var ZipCode = function(obj){
 
 	try{
 		if( !obj )
@@ -82,7 +82,7 @@ var PostNo = function(obj){
 	var res = [];
 
 	// この↓ファイルはShift_JIS
-	var file = "https://saitouseiroku.github.io/postno/KEN_ALL.CSV";
+	var file = "https://saitouseiroku.github.io/zipcode/KEN_ALL.CSV";
 
 	var rawFile = new XMLHttpRequest();
 

@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>postNo demo</title>
+<title>ZipCode Demo</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type='text/javascript' src='https://saitouseiroku.github.io/zipcode/api.js?002'></script>
 <script>
@@ -13,7 +13,7 @@
 			var obj={};
 			obj.adr = $("#address").val();
 
-			var res = PostNo(obj);
+			var res = ZipCode(obj);
 			$("#res").val( res );
 			console.log(res);
 		});

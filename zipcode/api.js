@@ -1,4 +1,4 @@
-var PostNo = function(obj, callback){
+var ZipCode = function(obj, callback){
 
 	try{
 		if( !obj )
@@ -89,7 +89,7 @@ var PostNo = function(obj, callback){
 	var isLevel2 = false;
 
 	// この↓ファイルはShift_JIS
-	var file = "https://saitouseiroku.github.io/postno/KEN_ALL.CSV";
+	var file = "https://saitouseiroku.github.io/zipcode/KEN_ALL.CSV";
 
 	var rawFile = new XMLHttpRequest();
 
