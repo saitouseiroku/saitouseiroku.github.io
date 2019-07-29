@@ -133,6 +133,9 @@ var ZipCode = function(obj, callback){
 
 								var c8_r = convNum(c8);
 
+								console.log("1", adr);
+								console.log("2", c7+c8);
+
 								if ( adr.indexOf(c7+c8) != -1 || adr.indexOf(c7+c8_r) != -1 ){
 
 									// adrにcolumn[7]を含む or adrにcolumn[8]を含む
@@ -142,7 +145,7 @@ var ZipCode = function(obj, callback){
 									var r7 = trimD(column[7]);
 									var r8 = trimD(column[8]);
 
-									console.log(r2, r6 + r7 + r8);
+									console.log("lv3:" + r2, r6 + r7 + r8);
 
 									//var data = {no:r2, adr:r6 + r7 + r8};
 									var data = {no:r2, adr:r6 + r7 + r8, level:3};
@@ -158,7 +161,7 @@ var ZipCode = function(obj, callback){
 										var r7 = trimD(column[7]);
 										var r8 = trimD(column[8]);
 
-										console.log(r2, r6 + r7 + r8);
+										console.log("lv2:" + r2, r6 + r7 + r8);
 
 										//var data = {no:r2, adr:r6 + r7 + r8};
 										var data = {no:r2, adr:r6 + r7 + r8, level:2};
@@ -174,7 +177,7 @@ var ZipCode = function(obj, callback){
 											var r7 = trimD(column[7]);
 											var r8 = trimD(column[8]);
 
-											console.log(r2, r6 + r7 + r8);
+											console.log("lv1:" + r2, r6 + r7 + r8);
 
 											//var data = {no:r2, adr:r6 + r7 + r8};
 											var data = {no:r2, adr:r6 + r7 + r8, level:1};
