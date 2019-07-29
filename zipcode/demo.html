@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to use API</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type='text/javascript' src='https://saitouseiroku.github.io/postno/api.js?002'></script>
+<script type='text/javascript' src='https://saitouseiroku.github.io/zipcode/api.js?002'></script>
 <script>
 
 	$(function(){
@@ -18,27 +18,43 @@
 
 		$("#search").click(function(){
 
+			$("#tbl").empty();
+
 			var obj={};
 			obj.adr = $("#address").val();
 
 			var callback = function(res){
 				console.log(res);
-				$("#res").val( res );
+
+				//$("#res").val( res );
 
 				var arr_res = JSON.parse(res);
 
 				$("#tbl").empty();
 				var tbl = $("#tbl");
+				var colgroup;
+				var col;
 				var tr;
 				var td;
 
 				for( var i=0; i<arr_res.length; i++ )
 				{
-					console.log( arr_res[i]['no'] );
+					var no = arr_res[i]['no'];
+					console.log( no );
 					console.log( arr_res[i]['adr'] );
 
 					if( i == 0 )
 					{
+						colgroup = $('<colgroup>');
+
+						col = $('<col>');
+						col.css('width', '20%');
+						colgroup.append(col);
+						col = $('<col>');
+						col.css('width', '80%');
+						colgroup.append(col);
+						tbl.append(colgroup);
+
 						tr = $('<tr>');
 						tr.css('background', '#F5F4E8');
 						td = $('<td>');
@@ -54,7 +70,17 @@
 
 					tr = $('<tr>');
 					td = $('<td>');
-					td.html(arr_res[i]['no']);
+					td.html(no);
+					td.css('cursor','pointer');
+					td.attr({ id:no });
+					td.click(function(){
+						console.log($(this).get(0).id);
+						$("#copy_no").val($(this).get(0).id);
+						$("#copy_no").select();
+						var r = document.execCommand('copy', false, null);
+						console.log(r);
+						$("#search").select();
+					});
 					tr.append(td);
 
 					td = $('<td>');
@@ -122,11 +148,14 @@ td{
 		<h1>郵便番号取得 API</h1>
 		<input type="text" id="address" class="a" placeholder="住所を都道府県名から入力してください">
 		<input type="button" id="search" class="s" value="検索"><br>
+		<!--
 		<textarea id="res" class="res"></textarea>
-		<div>
+		-->
+		<div style="margin-top:10px;">
 			<table id="tbl">
 			</table>
 		</div>
+		<input type="text" id="copy_no" style="border: 1px solid #fff;color: #fff;margin-top: 40px;">
 		<!--
 		<hr>
 		-->
