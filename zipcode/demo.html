@@ -18,6 +18,11 @@
 
 		$("#search").click(function(){
 
+			if( $("#address").val() == "" )
+			{
+				return;
+			}
+
 			$("#tbl").empty();
 
 			var obj={};
